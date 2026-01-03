@@ -1,0 +1,62 @@
+{
+  "geometry": {
+    "r_nozzle_inner": 5e-05,
+    "r_nozzle_outer": 0.0001,
+    "h_nozzle": 0.0005,
+    "gap_height": 0.0002,
+    "r_toroid_major": 0.002,
+    "r_toroid_minor": 0.0003,
+    "h_coil": 0.005,
+    "r_coil": 0.0015,
+    "pitch_coil": 0.0002,
+    "r_resonator_outer": 0.003,
+    "r_resonator_inner": 0.0025,
+    "h_resonator": 0.004
+  },
+  "physics": {
+    "T_cryo": 4,
+    "f_plasma": 2450000000.0,
+    "n_plasma": 1e+17,
+    "T_plasma_eV": 5,
+    "V_aln": 100,
+    "f_aln": 100000000.0,
+    "I_coil": 10,
+    "lambda_laser": 1.55e-06
+  },
+  "materials": {
+    "Mo": {
+      "conductivity": 18900000.0,
+      "thermal_conductivity": 138,
+      "density": 10280,
+      "heat_capacity": 251
+    },
+    "AlN": {
+      "permittivity": 9.14,
+      "thermal_conductivity": 285,
+      "density": 3260,
+      "d33": 5.53e-12
+    },
+    "SiC": {
+      "thermal_conductivity": 490,
+      "density": 3210,
+      "permittivity": 9.7
+    },
+    "c-BN": {
+      "thermal_conductivity": 1300,
+      "density": 3480
+    },
+    "Sapphire": {
+      "permittivity": 11.5,
+      "thermal_conductivity": 46,
+      "density": 3980,
+      "refractive_index": 1.76
+    }
+  },
+  "harmonic_nodes": [
+    30,
+    90,
+    150,
+    210,
+    270
+  ]
+}

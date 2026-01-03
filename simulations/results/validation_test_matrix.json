@@ -1,0 +1,203 @@
+{
+  "parameter_sweeps": {
+    "plasma_density": {
+      "name": "n_plasma",
+      "values": [
+        1e+16,
+        1.2742749857031322e+16,
+        1.6237767391887176e+16,
+        2.0691380811147816e+16,
+        2.6366508987303664e+16,
+        3.359818286283788e+16,
+        4.281332398719396e+16,
+        5.4555947811685144e+16,
+        6.951927961775591e+16,
+        8.858667904100795e+16,
+        1.128837891684693e+17,
+        1.438449888287666e+17,
+        1.8329807108324374e+17,
+        2.3357214690901213e+17,
+        2.976351441631313e+17,
+        3.792690190732238e+17,
+        4.8329302385717325e+17,
+        6.158482110660279e+17,
+        7.847599703514623e+17,
+        1e+18
+      ],
+      "unit": "1/m^3",
+      "description": "Plasma density sweep to find optimal operating point",
+      "num_points": 20
+    },
+    "actuation_voltage": {
+      "name": "V_aln",
+      "values": [
+        50.0,
+        60.0,
+        70.0,
+        80.0,
+        90.0,
+        100.0,
+        110.0,
+        120.0,
+        130.0,
+        140.0,
+        150.0,
+        160.0,
+        170.0,
+        180.0,
+        190.0,
+        200.0
+      ],
+      "unit": "V",
+      "description": "AlN actuation voltage sweep for piezoelectric optimization",
+      "num_points": 16
+    },
+    "coil_current": {
+      "name": "I_coil",
+      "values": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        11.0,
+        12.0,
+        13.0,
+        14.0,
+        15.0,
+        16.0,
+        17.0,
+        18.0,
+        19.0,
+        20.0
+      ],
+      "unit": "A",
+      "description": "Coil current sweep for magnetic field strength",
+      "num_points": 20
+    },
+    "temperature": {
+      "name": "T_cryo",
+      "values": [
+        4,
+        10,
+        20,
+        40,
+        77,
+        150,
+        300
+      ],
+      "unit": "K",
+      "description": "Temperature sweep from cryogenic to room temperature",
+      "num_points": 7
+    },
+    "frequency": {
+      "name": "f_plasma",
+      "values": [
+        1000000000.0,
+        1100000000.0,
+        1200000000.0,
+        1300000000.0,
+        1400000000.0,
+        1500000000.0,
+        1600000000.0,
+        1700000000.0,
+        1800000000.0,
+        1900000000.0,
+        2000000000.0,
+        2100000000.0,
+        2200000000.0,
+        2300000000.0,
+        2400000000.0,
+        2500000000.0,
+        2600000000.0,
+        2700000000.0,
+        2800000000.0,
+        2900000000.0,
+        3000000000.0,
+        3100000000.0,
+        3200000000.0,
+        3300000000.0,
+        3400000000.0,
+        3500000000.0,
+        3600000000.0,
+        3700000000.0,
+        3800000000.0,
+        3900000000.0,
+        4000000000.0,
+        4100000000.0,
+        4200000000.0,
+        4300000000.0,
+        4400000000.0,
+        4500000000.0,
+        4600000000.0,
+        4700000000.0,
+        4800000000.0,
+        4900000000.0,
+        5000000000.0
+      ],
+      "unit": "Hz",
+      "description": "Plasma frequency sweep for resonance identification",
+      "num_points": 41
+    }
+  },
+  "sensitivity_analysis": {
+    "geometry": {
+      "r_nozzle_inner": {
+        "nominal": 5e-05,
+        "variation": 0.1
+      },
+      "gap_height": {
+        "nominal": 0.0002,
+        "variation": 0.2
+      },
+      "r_toroid_minor": {
+        "nominal": 0.0003,
+        "variation": 0.15
+      },
+      "pitch_coil": {
+        "nominal": 0.0002,
+        "variation": 0.1
+      }
+    },
+    "materials": {
+      "Mo_conductivity": {
+        "nominal": 18900000.0,
+        "variation": 0.05
+      },
+      "AlN_d33": {
+        "nominal": 5.53e-12,
+        "variation": 0.1
+      },
+      "Sapphire_n": {
+        "nominal": 1.76,
+        "variation": 0.02
+      }
+    }
+  },
+  "optimization": {
+    "variables": [
+      "n_plasma",
+      "V_aln",
+      "I_coil"
+    ],
+    "objective": "maximize_thrust",
+    "constraints": [
+      "T_max < 300K",
+      "P_total < 10kW"
+    ]
+  },
+  "studies": [
+    "Parametric sweeps (5 parameters)",
+    "Sensitivity analysis (100 Monte Carlo samples)",
+    "Optimization (maximize thrust)",
+    "Transient startup (0-1 \u00b5s)",
+    "Thermal cycling (4K to 300K)",
+    "Mode coupling analysis",
+    "Nonlinear effects at high power"
+  ]
+}
