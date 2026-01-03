@@ -1,0 +1,127 @@
+
+================================================================================
+DRAKARIUS COMSOL MULTIPHYSICS SIMULATION SUMMARY
+================================================================================
+
+SYSTEM CONFIGURATION:
+--------------------
+Geometry:
+  - Mo Nozzle: Inner radius = 50.0 µm, Outer = 100.0 µm
+  - Height: 500.0 µm
+  - Gap to Toroid: 200.0 µm
+  - CTE Toroid: Major radius = 2.0 mm, Minor = 300.0 µm
+  - Spiral Coils: Height = 5.0 mm, Radius = 1.5 mm, Pitch = 200.0 µm
+  - Sapphire Resonator: Outer = 3.0 mm, Inner = 2.5 mm
+  - Resonator Height: 4.0 mm
+
+Physics Parameters:
+  - Cryogenic Temperature: 4 K
+  - H2 Plasma Frequency: 2.45 GHz
+  - Plasma Density: 1.00e+17 m⁻³
+  - Plasma Temperature: 5 eV (58000 K)
+  - AlN Actuation: 100 V @ 100 MHz
+  - Coil Current: 10 A
+  - Femtolaser Wavelength: 1.55 µm
+
+Calculated Plasma Properties:
+  - Plasma Frequency: 2.84 GHz
+  - Debye Length: 52.56 µm
+
+Casimir Effect:
+  - Gap: 500 µm
+  - Estimated Casimir Force: -1.31e-18 N
+
+PHYSICS MODULES IMPLEMENTED:
+---------------------------
+1. Eigenmode Study
+   - H2 plasma spiral eigenmodes in narrow nozzle
+   - 20 eigenmodes computed around plasma frequency
+   - Spiral mode formation for z-axis propagation
+
+2. Electromagnetic Wave Propagation
+   - Frequency domain analysis (1-5 GHz)
+   - Port excitation at nozzle base (1 kW)
+   - Scattering boundary conditions
+   - Poynting vector for thrust calculation
+
+3. Plasma Fluid Dynamics
+   - H2 plasma species
+   - Drift-diffusion transport
+   - Eigenmode coupling
+
+4. Heat Transfer
+   - Cryogenic cooling (4K) at resonator
+   - Plasma heating source
+   - Multimaterial thermal coupling
+   - Electromagnetic heating coupling
+
+5. Piezoelectric Actuation (AlN)
+   - Sinusoidal voltage excitation
+   - Coupling to structural mechanics
+   - Actuation at nozzle, toroid, coils, and resonator
+
+6. Magnetic Fields
+   - Helical coil configuration
+   - Time-varying current (intex/outex modes)
+   - Coupling to EM waves
+
+7. Harmonic Analysis
+   - Odd harmonic nodes: 30, 90, 150, 210, 270°
+   - Frequencies: f_aln × [1, 3, 5, 7, 9]
+
+8. Polariton Formation
+   - Avoided crossing calculation
+   - Upper and lower polariton branches
+   - Strong light-matter coupling regime
+
+9. Whispering Gallery Modes
+   - Sapphire resonator @ 4K
+   - Femtolaser-cut recursive jewel beetle lattices
+   - Casimir effect in confined geometry
+   - Mode coherence optimization
+
+10. Poynting Vector Analysis
+    - Directional bias calculation
+    - Net thrust from EM momentum flux
+    - Integration over exit plane
+
+MULTIPHYSICS COUPLINGS:
+----------------------
+- Electromagnetic Heating (EM → Heat)
+- Thermal Expansion (Heat → Mechanics)
+- Piezoelectric Coupling (Voltage → Mechanics → EM)
+- Plasma-EM Coupling (Plasma density → Permittivity)
+
+STUDIES CONFIGURED:
+-----------------
+Study 1: Eigenfrequency Analysis
+Study 2: Frequency Domain (1-5 GHz)
+Study 3: Time-Dependent Transient (0-100 ps)
+Study 4: Harmonic Analysis (Odd nodes)
+Study 5: Stationary (Casimir/WGM)
+
+VALIDATION METRICS:
+-----------------
+- Eigenmode spiral structure (m-fold symmetry)
+- Polariton avoided crossing gap
+- Poynting vector z-component (thrust)
+- Energy conservation (EM + thermal)
+- Temperature stability at 4K
+- Whispering gallery Q-factor
+
+OUTPUT FILES:
+------------
+- COMSOL Model: results/drakarius_full_system.mph
+- Data Export: results/comsol_drakarius_data.txt
+- Visualizations: results/*.png
+
+REFERENCES:
+----------
+- Drakarius Framework Manuscript: DOI 10.5281/zenodo.17289779
+- AlN Piezoelectric Properties
+- Sapphire Optical Properties @ Cryogenic Temperatures
+- Casimir Effect in Microcavities
+- Polariton Physics in Semiconductor Microcavities
+
+================================================================================
+    
