@@ -76,6 +76,12 @@ class AdvancedValidationTests:
         
         sweep = self.parameter_sweeps[param_name]
         
+        # Format values as MATLAB array
+        if isinstance(sweep['values'], np.ndarray):
+            values_str = '[' + ', '.join([f'{v:.6e}' for v in sweep['values']]) + ']'
+        else:
+            values_str = '[' + ', '.join([str(v) for v in sweep['values']]) + ']'
+        
         script = f"""
 % Parameter Sweep: {sweep['description']}
 % Parameter: {sweep['name']}
@@ -91,7 +97,7 @@ model.study('param_sweep_{param_name}').feature('param').set('plistarr', {{'swee
 model.study('param_sweep_{param_name}').feature('param').set('punit', {{'{sweep['unit']}'}});
 
 % Sweep values
-sweep_values = {list(sweep['values'])};
+sweep_values = {values_str};
 
 % Attach to frequency domain study
 model.study('param_sweep_{param_name}').create('freq', 'Frequency');

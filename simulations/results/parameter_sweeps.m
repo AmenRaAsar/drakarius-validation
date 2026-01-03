@@ -15,7 +15,7 @@ model.study('param_sweep_plasma_density').feature('param').set('plistarr', {'swe
 model.study('param_sweep_plasma_density').feature('param').set('punit', {'1/m^3'});
 
 % Sweep values
-sweep_values = [np.float64(1e+16), np.float64(1.2742749857031322e+16), np.float64(1.6237767391887176e+16), np.float64(2.0691380811147816e+16), np.float64(2.6366508987303664e+16), np.float64(3.359818286283788e+16), np.float64(4.281332398719396e+16), np.float64(5.4555947811685144e+16), np.float64(6.951927961775591e+16), np.float64(8.858667904100795e+16), np.float64(1.128837891684693e+17), np.float64(1.438449888287666e+17), np.float64(1.8329807108324374e+17), np.float64(2.3357214690901213e+17), np.float64(2.976351441631313e+17), np.float64(3.792690190732238e+17), np.float64(4.8329302385717325e+17), np.float64(6.158482110660279e+17), np.float64(7.847599703514623e+17), np.float64(1e+18)];
+sweep_values = [1.000000e+16, 1.274275e+16, 1.623777e+16, 2.069138e+16, 2.636651e+16, 3.359818e+16, 4.281332e+16, 5.455595e+16, 6.951928e+16, 8.858668e+16, 1.128838e+17, 1.438450e+17, 1.832981e+17, 2.335721e+17, 2.976351e+17, 3.792690e+17, 4.832930e+17, 6.158482e+17, 7.847600e+17, 1.000000e+18];
 
 % Attach to frequency domain study
 model.study('param_sweep_plasma_density').create('freq', 'Frequency');
@@ -55,7 +55,7 @@ model.study('param_sweep_actuation_voltage').feature('param').set('plistarr', {'
 model.study('param_sweep_actuation_voltage').feature('param').set('punit', {'V'});
 
 % Sweep values
-sweep_values = [np.float64(50.0), np.float64(60.0), np.float64(70.0), np.float64(80.0), np.float64(90.0), np.float64(100.0), np.float64(110.0), np.float64(120.0), np.float64(130.0), np.float64(140.0), np.float64(150.0), np.float64(160.0), np.float64(170.0), np.float64(180.0), np.float64(190.0), np.float64(200.0)];
+sweep_values = [5.000000e+01, 6.000000e+01, 7.000000e+01, 8.000000e+01, 9.000000e+01, 1.000000e+02, 1.100000e+02, 1.200000e+02, 1.300000e+02, 1.400000e+02, 1.500000e+02, 1.600000e+02, 1.700000e+02, 1.800000e+02, 1.900000e+02, 2.000000e+02];
 
 % Attach to frequency domain study
 model.study('param_sweep_actuation_voltage').create('freq', 'Frequency');
@@ -95,7 +95,7 @@ model.study('param_sweep_coil_current').feature('param').set('plistarr', {'sweep
 model.study('param_sweep_coil_current').feature('param').set('punit', {'A'});
 
 % Sweep values
-sweep_values = [np.float64(1.0), np.float64(2.0), np.float64(3.0), np.float64(4.0), np.float64(5.0), np.float64(6.0), np.float64(7.0), np.float64(8.0), np.float64(9.0), np.float64(10.0), np.float64(11.0), np.float64(12.0), np.float64(13.0), np.float64(14.0), np.float64(15.0), np.float64(16.0), np.float64(17.0), np.float64(18.0), np.float64(19.0), np.float64(20.0)];
+sweep_values = [1.000000e+00, 2.000000e+00, 3.000000e+00, 4.000000e+00, 5.000000e+00, 6.000000e+00, 7.000000e+00, 8.000000e+00, 9.000000e+00, 1.000000e+01, 1.100000e+01, 1.200000e+01, 1.300000e+01, 1.400000e+01, 1.500000e+01, 1.600000e+01, 1.700000e+01, 1.800000e+01, 1.900000e+01, 2.000000e+01];
 
 % Attach to frequency domain study
 model.study('param_sweep_coil_current').create('freq', 'Frequency');
@@ -135,7 +135,7 @@ model.study('param_sweep_temperature').feature('param').set('plistarr', {'sweep_
 model.study('param_sweep_temperature').feature('param').set('punit', {'K'});
 
 % Sweep values
-sweep_values = [np.int64(4), np.int64(10), np.int64(20), np.int64(40), np.int64(77), np.int64(150), np.int64(300)];
+sweep_values = [4.000000e+00, 1.000000e+01, 2.000000e+01, 4.000000e+01, 7.700000e+01, 1.500000e+02, 3.000000e+02];
 
 % Attach to frequency domain study
 model.study('param_sweep_temperature').create('freq', 'Frequency');
@@ -175,7 +175,7 @@ model.study('param_sweep_frequency').feature('param').set('plistarr', {'sweep_va
 model.study('param_sweep_frequency').feature('param').set('punit', {'Hz'});
 
 % Sweep values
-sweep_values = [np.float64(1000000000.0), np.float64(1100000000.0), np.float64(1200000000.0), np.float64(1300000000.0), np.float64(1400000000.0), np.float64(1500000000.0), np.float64(1600000000.0), np.float64(1700000000.0), np.float64(1800000000.0), np.float64(1900000000.0), np.float64(2000000000.0), np.float64(2100000000.0), np.float64(2200000000.0), np.float64(2300000000.0), np.float64(2400000000.0), np.float64(2500000000.0), np.float64(2600000000.0), np.float64(2700000000.0), np.float64(2800000000.0), np.float64(2900000000.0), np.float64(3000000000.0), np.float64(3100000000.0), np.float64(3200000000.0), np.float64(3300000000.0), np.float64(3400000000.0), np.float64(3500000000.0), np.float64(3600000000.0), np.float64(3700000000.0), np.float64(3800000000.0), np.float64(3900000000.0), np.float64(4000000000.0), np.float64(4100000000.0), np.float64(4200000000.0), np.float64(4300000000.0), np.float64(4400000000.0), np.float64(4500000000.0), np.float64(4600000000.0), np.float64(4700000000.0), np.float64(4800000000.0), np.float64(4900000000.0), np.float64(5000000000.0)];
+sweep_values = [1.000000e+09, 1.100000e+09, 1.200000e+09, 1.300000e+09, 1.400000e+09, 1.500000e+09, 1.600000e+09, 1.700000e+09, 1.800000e+09, 1.900000e+09, 2.000000e+09, 2.100000e+09, 2.200000e+09, 2.300000e+09, 2.400000e+09, 2.500000e+09, 2.600000e+09, 2.700000e+09, 2.800000e+09, 2.900000e+09, 3.000000e+09, 3.100000e+09, 3.200000e+09, 3.300000e+09, 3.400000e+09, 3.500000e+09, 3.600000e+09, 3.700000e+09, 3.800000e+09, 3.900000e+09, 4.000000e+09, 4.100000e+09, 4.200000e+09, 4.300000e+09, 4.400000e+09, 4.500000e+09, 4.600000e+09, 4.700000e+09, 4.800000e+09, 4.900000e+09, 5.000000e+09];
 
 % Attach to frequency domain study
 model.study('param_sweep_frequency').create('freq', 'Frequency');
